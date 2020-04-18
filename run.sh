@@ -84,6 +84,9 @@ if [ "${RS_MODE}" = "RASPICAM" ] && [ "$CPU_TYPE" = "arm" ]; then
 
     RASPICAM_WIDTH=${RS_RASPICAM_WIDTH:=1920}
     RASPICAM_HEIGHT=${RS_RASPICAM_HEIGHT:=1080}
+    RASPICAM_ROTATION=${RS_RASPICAM_ROTATION:=0}
+
+
     # -100 to 100
     RASPICAM_SHARPNESS=${RS_RASPICAM_SHARPNESS:=0}
     # -100 to 100
@@ -142,6 +145,7 @@ if [ "${RS_MODE}" = "RASPICAM" ] && [ "$CPU_TYPE" = "arm" ]; then
         $RASPIVID_OPTIONS \
         --width "$RASPICAM_WIDTH" \
         --height "$RASPICAM_HEIGHT" \
+        --rotation "$RASPICAM_ROTATION" \
         --framerate "$RASPICAM_FPS" \
         --bitrate "$RASPICAM_BITRATE" \
         --intra "$RASPICAM_GOP" \
